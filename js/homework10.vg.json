@@ -4,7 +4,7 @@
   "width": "container",
   "background":"#E8BEAC",
   "data": {
-    "url": "https://raw.githubusercontent.com/YichengPeng2209/homework9/main/data/2020.csv"
+    "url": "https://raw.githubusercontent.com/YichengPeng2209/Assignment2Final/main/data/2020.csv"
   },
   "encoding": {
     "x": {

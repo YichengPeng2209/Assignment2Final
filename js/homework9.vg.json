@@ -8,7 +8,7 @@
   "layer":[
     {
       "data": {
-        "url": "https://raw.githubusercontent.com/YichengPeng2209/homework9/main/js/world_geo.topojson",
+        "url": "https://raw.githubusercontent.com/YichengPeng2209/Assignment2Final/main/js/world_geo.topojson",
         "format": {
           "type": "topojson",
           "feature": "custom.geo"
@@ -20,7 +20,7 @@
 },
     {
       "data": {
-    "url": "https://raw.githubusercontent.com/YichengPeng2209/homework9/main/js/world_geo.topojson",
+    "url": "https://raw.githubusercontent.com/YichengPeng2209/Assignment2Final/main/js/world_geo.topojson",
     "format": {
           "type": "topojson",
           "feature": "custom.geo"
@@ -30,7 +30,7 @@
       "lookup": "properties.name",
       "from": {
         "data": {
-          "url": "https://raw.githubusercontent.com/YichengPeng2209/homework9/main/data/2020.csv"
+          "url": "https://raw.githubusercontent.com/YichengPeng2209/Assignment2Final/main/data/2020.csv"
         },
         "key": "Country",
         "fields": ["Ladderscore"]
