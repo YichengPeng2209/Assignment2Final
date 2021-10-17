@@ -8,6 +8,18 @@
   "layer":[
     {
       "data": {
+        "url": "https://raw.githubusercontent.com/YichengPeng2209/Assignment2Final/main/js/boundary.topojson",
+        "format": {
+          "type": "topojson",
+          "feature": "boundary"
+        }       
+  },
+  "mark":{"type":"geoshape",
+          "fill":"#FFFFFF",
+          "stroke":"#FFFFFF"}
+},
+    {
+      "data": {
         "url": "https://raw.githubusercontent.com/YichengPeng2209/Assignment2Final/main/js/world_geo.topojson",
         "format": {
           "type": "topojson",
