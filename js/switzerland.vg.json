@@ -1,0 +1,33 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "A simple pie chart with embedded data.",
+  "background":"#E8BEAC",
+  "data": {
+    "values": [
+      {"category": "Pop. without migration BKGD", "value": 4352},
+      {"category": "Pop. with migration BKGD", "value": 2722},
+      {"category": "Pop. with unavalable data", "value": 140}
+      
+    ]
+  },
+  "mark": "arc",
+  "encoding": {
+    "theta": {"field": "value", "type": "quantitative"},
+    "color": {"field": "category", 
+        "title":"Population Type",
+        "type": "nominal",
+    "scale":{"range":["#d55099","#f499a4","#ffe0d8"]}},
+    "tooltip": [
+      {"field": "category","title":"Population Type", "type": "nominal"},
+      {"field": "value","title":"Population in thousand", "type": "quantitative"}
+    ]
+  },
+  
+
+   
+  "config": {
+    "view": {"stroke": "transparent"},
+    "axis": {"domainWidth": 1}
+  }
+  
+}

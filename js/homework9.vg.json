@@ -1,0 +1,71 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 640,
+  "height": 400,
+  "title": "People Happiness Around The World 2020",
+  "background":"#E8BEAC",
+  
+  "layer":[
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/YichengPeng2209/homework9/main/js/world_geo.topojson",
+        "format": {
+          "type": "topojson",
+          "feature": "custom.geo"
+        }       
+  },
+  "mark":{"type":"geoshape",
+          "fill":"#E8BEAC",
+          "stroke":"#FFFFFF"}
+},
+    {
+      "data": {
+    "url": "https://raw.githubusercontent.com/YichengPeng2209/homework9/main/js/world_geo.topojson",
+    "format": {
+          "type": "topojson",
+          "feature": "custom.geo"
+        }
+  },
+  "transform": [{
+      "lookup": "properties.name",
+      "from": {
+        "data": {
+          "url": "https://raw.githubusercontent.com/YichengPeng2209/homework9/main/data/2020.csv"
+        },
+        "key": "Country",
+        "fields": ["Ladderscore"]
+      }
+    }
+  ],
+  "projection": {
+    "type": "equirectangular"
+  },
+  "mark": {
+    "type": "geoshape"
+    },
+  "encoding": {
+    "color": {
+      "field": "Ladderscore",
+      "title":"Ladder Score",
+      "type": "quantitative",
+      "scale": {"type": "threshold","domain":[2,4,6,8],"range":["#E582A0","#DC567E","#D42B5E","#A9234B "]}
+    },
+    "tooltip": [
+      {"field": "properties.name", "type": "nominal", "title": "Country"},
+      {"field": "Ladderscore", "type": "quantitative"}
+    ]
+  }
+    }
+  ],
+  
+  "config": {
+  "style": {
+    "cell": {
+      "stroke": "transparent"
+    }
+  }
+}
+}
+
+
+

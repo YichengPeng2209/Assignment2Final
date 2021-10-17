@@ -1,0 +1,33 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "background":"#E8BEAC",
+  "data": {
+    "url": "https://raw.githubusercontent.com/YichengPeng2209/homework9/main/data/aurora.csv",
+    "format":{
+      "type":"csv",
+    "parse":{"No_Aurora":"number"}
+    }
+  },
+  "width": "container",
+  "encoding": {
+    "y": {"field": "Month", "type": "nominal", "axis": {"labelAngle": 0, "title":"Month"},
+    "axis": {"grid": false}},
+    "x": {"field": "No_Aurora", "title":"Number Of Aurora","type": "quantitative",
+    "axis": {"grid": false}},
+    "color" :{
+      "field":"Month",
+      "type":"nominal",
+      "scale":{"range":["#ACD6E8"]}
+      
+  }
+  },
+  "mark": "bar",
+  
+  
+  "config": {
+    "view": {"stroke": "transparent"},
+    "axis": {"domainWidth": 1},
+    "legend": {"disable": true}
+  }
+   
+}

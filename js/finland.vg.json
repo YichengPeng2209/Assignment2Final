@@ -1,0 +1,48 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "background":"#E8BEAC",
+  "data": {
+    "url": "https://raw.githubusercontent.com/YichengPeng2209/homework9/main/data/country_pollution.csv",
+    "format":{
+      "type":"csv",
+    "parse":{"2020 AVG":"number"}
+    }
+  },
+  "width": "container",
+  "encoding": {
+    "y": {"field": "Country/Region", "type": "nominal", "axis": {"labelAngle": 0, "title":"Country"},
+    "sort":{"field":"2020 AVG","op":"average","order":"ascending"},
+"axis": {"grid": false}},
+    "x": {"field": "2020 AVG", "title":"Pm2.5","type": "quantitative",
+    "axis": {"grid": false}},
+    "color" :{
+      "field":"Country",
+      "type":"nominal",
+      "scale":{"range":["#ACD6E8"]}
+      
+  }
+  },
+  "layer":[
+      {
+          "transform": [
+    {
+      "window": [{
+        "op": "rank",
+        "as": "rank"
+      }],
+      "sort": [{ "field": "2020 AVG", "order": "descending" }]
+    }, {
+      "filter": "datum.Rank >= 95"
+    }
+  ],
+  "mark": "bar"
+      }
+
+  ],
+  "config": {
+    "view": {"stroke": "transparent"},
+    "axis": {"domainWidth": 1},
+    "legend": {"disable": true}
+  }
+   
+}

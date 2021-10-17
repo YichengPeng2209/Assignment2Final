@@ -1,0 +1,110 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "height": 350,
+  "width": "container",
+  "background":"#E8BEAC",
+  "data": {
+    "url": "https://raw.githubusercontent.com/YichengPeng2209/homework9/main/data/2020.csv"
+  },
+  "encoding": {
+    "x": {
+      "field": "Ladderscore",
+      "type": "quantitative",
+      "title":"Ladder score",
+      "scale": {"type": "log",  "domain":[2, 10]},
+      "axis": {"grid": false}
+    },
+    "y": {
+      "field": "Logged GDP per capita",
+      "type": "quantitative",
+      "axis": { "tickCount": 6},
+      "scale": {"type": "log", "domain":[5,15]},
+      "axis": {"grid": false}
+    }
+  },
+
+  "layer":[{
+      "selection": {
+    "region_highlight": {
+      "type": "multi",
+      "fields": ["Regional indicator"],
+      "bind": "legend"}
+    },
+      "mark": "point",
+  "encoding": {
+    
+    "opacity":{
+      "condition":{"selection":"region_highlight","value":1},
+      "value":0
+    },
+    "size": {"field": "corruptionindex_10", "title":"Corruption (1-100)","type": "quantitative",  "scale": {"range": [100, 800]}
+},
+    
+    "color": {"field": "Regional indicator", "type": "nominal"},
+   
+    "tooltip": [
+      {"field": "Country", "type": "nominal"},
+      {"field": "Ladderscore","title":"Ladder score", "type": "quantitative", "format": ","},
+      {"field": "Logged GDP per capita", "type": "quantitative", "format": ","},
+      {"field": "Social support", "type": "quantitative", "format": ","},
+      {"field": "Healthy life expectancy", "type": "quantitative", "format": ","},
+      {"field": "corruptionindex_10","title":"Corruption", "type": "quantitative", "format": ","}
+    ]
+
+  }
+
+  },
+  {
+      "mark": {
+          "type": "text",
+          "align": "right",
+          "baseline": "middle",
+          "dx": 45,
+          "fontSize": 10.5
+        },
+        "encoding": {
+            "text":{"field": "Country",  "type": "nominal"},
+            "color":{"value":"black"},
+            "opacity": {
+            "condition": {
+                "test": "datum['Country'] == 'Finland'",
+                "value": 1
+            },
+            "value": 0
+        }
+        }
+
+  },
+  {
+      "mark": {
+          "type": "text",
+          "align": "center",
+          "baseline": "top",
+          "dx": 25,
+          "dy":-20,
+          "fontSize": 10.5
+        },
+        "encoding": {
+            "text":{"field": "Country",  "type": "nominal"},
+            "color":{"value":"black"},
+            "opacity": {
+            "condition": {
+                "test": "datum['Country'] == 'Luxembourg'",
+                "value": 1
+            },
+            "value": 0
+        }
+        }
+
+  }
+
+],
+"config": {
+    "view": {"stroke": "transparent"},
+    "axis": {"domainWidth": 1}
+  }
+  
+}
+
+
+
