@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+  
+  <!-- Import pure.css -->
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css" integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Google font -->
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700;900&display=swap" rel="stylesheet">
+  <!-- CSS file -->
+  <link href="https://emoji-css.afeld.me/emoji.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
+  
+</head>
+
+<body>
+
+<div class="page">
+<div class="pure-g">
+      <div class="pure-u-3-4">
+        <div class="description description-left">
+          <h1>Happiness around the world &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          </h1>
+          <span class = "subtitle">The data used is based on Year 2020</span>
+        </div>
+      </div> 
+      <div class="pure-u-1-4"><span style='font-size:150px;'>&#128512;</span></div>
+      
+    </div>
+
+
+<div class="pure-g">
+        <div class="pure-u-1-1">
+          <div class="description description-left">
+            <p><b>Happiness of a country</b> are represented by <b>ladder score</b>
+               which is an index based on the GDP, Social support,Healthy life expectancy,Freedom to make life choices,Generosity and Perceptions of corruption.The value of ladder score is <b>from 0 to 10</b>, where 0 represents the<b> worst</b> possible life and 
+              10 represents the <b>best</b> possible life.
+            </p>
+          </div>
+        </div>
+        <div class="pure-u-1-1">
+          <div id="vis1" class="vis-container-one"></div>
+        </div>
+        <div class="pure-u-1-1">
+          <div id="vis2" class="vis-container-two"></div>
+        </div>
+</div>
+
+<div class="pure-g">
+  <div class="pure-u-1-3">
+          <div id="vis3" class="vis-container"></div>
+        </div>
+      <div class="pure-u-1-3">
+          <div id="vis4" class="vis-container"></div>
+        </div>
+        <div class="pure-u-1-3">
+          <div class="description description-right">
+            
+            <h2><i class="em em-flag-fi" aria-role="presentation" aria-label="Finland Flag"></i>&nbsp;&nbsp;Finland</h2>
+            <p>
+              Finland was ranked as the <b>best</b> possible living country in 2020. It is one of the northernmost countries in the world and it had almost the cleanest air in the world. Also,people have the opportunity to see the nature's most spectacular light show (Aurora) from <b>September to March</b>.
+            </p>
+          </div>
+        </div>  
+    </div>
+
+    <div class="pure-g">
+      
+        <div class="pure-u-2-3">
+          <div class="description description-right">
+            
+            <h2><i class="em em-flag-dk" aria-role="presentation" aria-label="Denmark Flag"></i>&nbsp;&nbsp;Denmark</h2>
+            <p>Denmark was ranked for the <b>second place</b> in the World Happiness Report in 2020. The country is also famous for its
+              high-quality design. It has the most popular building-block toys company LEGO.
+            </p>
+          </div>
+
+        </div>
+        
+        <div class="pure-u-1-4">
+            <div class="lego">
+              <img src="image/lego.jpg" width="280" height="200">
+            </div>
+          </div>
+
+        
+      
+    </div>
+
+    <div class="pure-g">
+      <div class="pure-u-1-2">
+
+        <div id="vis5" class="vis-container"></div>
+      </div>
+      
+        <div class="pure-u-1-2">
+          <div class="description description-right">
+            
+            <h2><i class="em em-flag-ch" aria-role="presentation" aria-label="Switzerland Flag"></i>&nbsp;&nbsp;Switzerland </h2>
+            <p>
+              Switzerland was ranked for the <b>third place</b> in the World Happiness Report in 2020. It has long been an emigration hotspot around the world.
+              Nearly 1/3 of the population has migration background. It has <b>the best social security and the lowest crime rate </b>in the world.
+            </p>
+          </div>
+
+        </div>
+        
+       
+        
+      
+    </div>
+
+</div>
+  
+
+
+
+<script type="text/javascript">
+  var specVis1 = "js/homework9.vg.json";
+  var specVis2= "js/homework10.vg.json";
+  var specVis3 = "js/finland.vg.json";
+  var specVis4 = "js/aurora.vg.json";
+  var specVis4 = "js/aurora.vg.json";
+  var specVis5 = "js/switzerland.vg.json";
+  vegaEmbed('#vis1', specVis1, {"actions": false});
+  
+  vegaEmbed('#vis2', specVis2, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+  vegaEmbed('#vis3', specVis3, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+  vegaEmbed('#vis4', specVis4, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+  vegaEmbed('#vis5', specVis5, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+  
+
+</script>
+
+</body>
+</html>
